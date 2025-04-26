@@ -1,7 +1,7 @@
 import SearchBar from "./components/SearchBar";
-import UserDetailsCard from "./components/UserDetailsCard";
 import UsersGrid from "./components/UsersGrid";
 import UsersProvider from "./state-management/UsersProvider";
+import LazyUserDetailsCard from "./components/LazyUserDetailsCard";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
           </h1>
           <SearchBar />
           <UsersGrid />
-          <UserDetailsCard />
+          <LazyUserDetailsCard />
         </div>
       </div>
     </UsersProvider>

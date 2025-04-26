@@ -1,6 +1,7 @@
 import UserCard from "./UserCard";
 import UsersContext from "../state-management/context/usersContext";
 import { useContext } from "react";
+import { ClipLoader } from "react-spinners";
 
 const UsersGrid = () => {
   const { filteredUsers, error, isLoading } = useContext(UsersContext);
@@ -10,9 +11,9 @@ const UsersGrid = () => {
   return (
     <>
       {isLoading ? (
-        <p className="text-[var(--text-text)] text-lg text-center">
-          Loading...
-        </p>
+        <div className="flex justify-center">
+          <ClipLoader color="black" size="28" />
+        </div>
       ) : (
         <div className="max-w-[95%] sm:max-width-[90%] md:max-width-[80%] lg:max-width-[70%] text-[var(--text-text)] mx-auto">
           <div className="hidden md:grid grid-cols-4 font-bold gap-4 px-4 py-1 border-b-1 shadow-sm bg-white">
