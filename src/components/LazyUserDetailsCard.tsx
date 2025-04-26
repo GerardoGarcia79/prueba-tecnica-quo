@@ -10,6 +10,7 @@ const LazyUserDetailsCard = () => {
   if (!openModal) return null;
 
   return (
+    // Suspense is used to show a spinner while loading the UserDetailsCard lazily
     <Suspense
       fallback={
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">

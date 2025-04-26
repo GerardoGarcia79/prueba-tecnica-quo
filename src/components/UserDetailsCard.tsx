@@ -13,12 +13,14 @@ const UserDetailsCard = () => {
       onClick={() => setOpenModal(false)}
       className="fixed inset-0 z-50 flex justify-center items-center bg-black/50"
     >
+      {/* Prevent modal from closing when clicking inside the card */}
       <div
         onClick={(e) => {
           e.stopPropagation();
         }}
         className="relative w-[90%] md:w-[70%] lg:w-[40%] p-6 rounded shadow-lg bg-[var(--bg-bg)] text-[var(--text-text)]"
       >
+        {/* Close button */}
         <button
           className="absolute top-2 right-4 text-2xl font-bold text-red-500 cursor-pointer"
           onClick={() => setOpenModal(false)}
