@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { User } from "../types/User";
+import UsersContext from "../state-management/context/usersContext";
 
 const UserCard = ({ user }: { user: User }) => {
+  const { setOpenModal, setSelectedUser } = useContext(UsersContext);
+
   return (
     <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-4 md:grid-rows-1 p-4 border-b-1 shadow-sm bg-white items-center text-text place-items-center md:place-items-start md:gap-y-2 md:gap-x-4 break-all text-center md:text-start mb-5 md:mb-0">
       {/* Mobile img and Tablet/Desktop Img/Name */}
@@ -32,7 +36,13 @@ const UserCard = ({ user }: { user: User }) => {
       {/* Button all */}
       <div className="w-full h-full col-span-2 row-start-5 md:flex md:items-center md:col-span-1 md:row-auto flex justify-start md:justify-center">
         <div className="flex w-full justify-center pt-2 md:pt-0">
-          <button className="px-4 py-1 bg-[var(--text-text)] text-[var(--bg-bg)] rounded hover:bg-[var(--btn-primary)] hover:text-[var(--text-text)] transition-colors hover:cursor-pointer">
+          <button
+            onClick={() => {
+              setSelectedUser(user);
+              setOpenModal(true);
+            }}
+            className="px-4 py-1 bg-[var(--text-text)] text-[var(--bg-bg)] rounded hover:bg-[var(--btn-primary)] hover:text-[var(--text-text)] transition-colors hover:cursor-pointer"
+          >
             Details
           </button>
         </div>

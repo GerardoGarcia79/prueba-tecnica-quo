@@ -1,4 +1,5 @@
 import SearchBar from "./components/SearchBar";
+import UserDetailsCard from "./components/UserDetailsCard";
 import UsersGrid from "./components/UsersGrid";
 import UsersProvider from "./state-management/UsersProvider";
 
@@ -12,6 +13,7 @@ function App() {
           </h1>
           <SearchBar />
           <UsersGrid />
+          <UserDetailsCard />
         </div>
       </div>
     </UsersProvider>

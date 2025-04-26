@@ -3,9 +3,6 @@ import { ReactNode, useEffect, useState } from "react";
 import UsersContext from "./context/usersContext";
 import { User } from "../types/User";
 import { getUsers } from "../utils/getUsers";
-// import apiClient from "../services/api-client";
-// import { UsersApiResponse } from "../types/UsersApiResponse";
-// import { UsersApiResultToUserMapper } from "../utils/mapper";
 
 interface Props {
   children: ReactNode;
@@ -17,6 +14,8 @@ const UsersProvider = ({ children }: Props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
   const [searchValue, setSearchValue] = useState("");
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -47,7 +46,17 @@ const UsersProvider = ({ children }: Props) => {
 
   return (
     <UsersContext.Provider
-      value={{ filteredUsers, searchValue, error, isLoading, setSearchValue }}
+      value={{
+        filteredUsers,
+        searchValue,
+        error,
+        isLoading,
+        openModal,
+        selectedUser,
+        setSearchValue,
+        setOpenModal,
+        setSelectedUser,
+      }}
     >
       {children}
     </UsersContext.Provider>
