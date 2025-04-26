@@ -6,7 +6,6 @@ import { UsersApiResultToUserMapper } from "./mapper";
 
 export const getUsers = (
   setUsers: React.Dispatch<React.SetStateAction<User[]>>,
-  setFilteredUsers: React.Dispatch<React.SetStateAction<User[]>>,
   setError: React.Dispatch<React.SetStateAction<string>>,
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
   signal: AbortSignal
@@ -25,7 +24,6 @@ export const getUsers = (
       );
 
       setUsers([...users]);
-      setFilteredUsers([...users]);
       setIsLoading(false);
     })
     .catch((error) => {
