@@ -10,7 +10,7 @@ const SearchBar = () => {
     <div className="flex justify-center">
       <input
         placeholder="Search users by name..."
-        className="w-[50%] md:w-[40%] lg:w[30%] border-2 rounded-md border-[var(--text-text)] focus:border-[var(--btn-primary)] transition-colors p-2 outline-0 mb-5"
+        className="w-[80%] md:w-[60%] border-2 rounded-md border-[var(--text-text)] focus:border-[var(--btn-primary)] transition-colors p-2 outline-0 mb-5"
         onChange={(e) => setSearchValue(e.target.value)}
       />
     </div>

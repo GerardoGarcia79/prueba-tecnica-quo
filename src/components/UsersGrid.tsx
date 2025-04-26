@@ -26,7 +26,7 @@ const UsersGrid = () => {
 
   return (
     <>
-      <div className="max-w-[95%] sm:max-width-[90%] md:max-width-[80%] lg:max-width-[70%] text-[var(--text-text)] mx-auto">
+      <div className="min-w-[95%] sm:min-w-[90%] md:min-w-[80%] lg:min-w-[70%] text-[var(--text-text)] mx-auto">
         <div className="hidden md:grid grid-cols-4 font-bold gap-4 px-4 py-1 border-b-1 shadow-sm bg-white">
           <h2 className="table-header">Name</h2>
           <h2 className="table-header">Cell number</h2>
