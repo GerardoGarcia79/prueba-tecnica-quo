@@ -1,3 +1,4 @@
+import SearchBar from "./components/SearchBar";
 import UsersGrid from "./components/UsersGrid";
 import UsersProvider from "./state-management/UsersProvider";
 
@@ -9,6 +10,7 @@ function App() {
           <h1 className="font-bold text-3xl text-text text-center mb-2 md:mb-5">
             Prueba Técnica Front-end Junior
           </h1>
+          <SearchBar />
           <UsersGrid />
         </div>
       </div>

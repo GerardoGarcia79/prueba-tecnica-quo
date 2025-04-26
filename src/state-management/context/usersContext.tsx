@@ -2,8 +2,9 @@ import React from "react";
 import { User } from "../../types/User";
 
 interface UsersContextType {
-  users: User[];
-  setUsers: React.Dispatch<React.SetStateAction<User[]>>;
+  filteredUsers: User[];
+  searchValue: string;
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const UsersContext = React.createContext({} as UsersContextType);

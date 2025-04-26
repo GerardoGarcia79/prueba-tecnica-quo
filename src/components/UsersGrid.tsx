@@ -3,7 +3,7 @@ import UsersContext from "../state-management/context/usersContext";
 import { useContext } from "react";
 
 const UsersGrid = () => {
-  const { users } = useContext(UsersContext);
+  const { filteredUsers } = useContext(UsersContext);
 
   return (
     <div className="max-w-[95%] sm:max-width-[90%] md:max-width-[80%] lg:max-width-[70%] text-[var(--text-text)] mx-auto">
@@ -15,7 +15,7 @@ const UsersGrid = () => {
           <h2 className="table-header">Details</h2>
         </div>
       </div>
-      {users.map((user, index) => (
+      {filteredUsers.map((user, index) => (
         <UserCard key={user.id + "-" + index} user={user} />
       ))}
     </div>
