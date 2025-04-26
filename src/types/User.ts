@@ -1,13 +1,10 @@
 export interface User {
-  id: string;
+  id: number;
   name: string;
   gender: string;
   email: string;
   cell: string;
-  picture: {
-    medium: string;
-    large: string;
-  };
+  image: string;
   address: {
     street: string;
     city: string;

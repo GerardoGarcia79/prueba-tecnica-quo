@@ -13,7 +13,7 @@ const LazyUserDetailsCard = () => {
     <Suspense
       fallback={
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <ClipLoader color="white" size={40} />
+          <ClipLoader color="white" size="40px" />
         </div>
       }
     >

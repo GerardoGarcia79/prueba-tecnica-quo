@@ -27,7 +27,7 @@ const UserDetailsCard = () => {
         </button>
         <div className="flex flex-col items-center space-y-4">
           <img
-            src={user?.picture.large}
+            src={user?.image}
             alt="User Image"
             className="h-40 w-40 rounded-full"
           />

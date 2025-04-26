@@ -1,7 +1,7 @@
 import { AxiosError, CanceledError } from "axios";
 import apiClient from "../services/api-client";
 import { User } from "../types/User";
-import { UsersApiResponse } from "../types/UsersApiResponse";
+import { UsersAPIResponse } from "../types/UsersApiResponse";
 import { UsersApiResultToUserMapper } from "./mapper";
 
 export const getUsers = (
@@ -11,14 +11,14 @@ export const getUsers = (
   signal: AbortSignal
 ) => {
   apiClient
-    .get<UsersApiResponse>("/", {
+    .get<UsersAPIResponse>("", {
       params: {
-        results: 20,
+        limit: 20,
       },
       signal,
     })
     .then((response) => {
-      const users = response.data.results.map((user) =>
+      const users = response.data.users.map((user) =>
         // Transform User type from Api Response to a local User type
         UsersApiResultToUserMapper(user)
       );

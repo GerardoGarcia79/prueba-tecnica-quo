@@ -12,7 +12,7 @@ const UsersGrid = () => {
   if (isLoading) {
     return (
       <div className="flex justify-center">
-        <ClipLoader color="black" size="28" />
+        <ClipLoader color="black" size="28px" />
       </div>
     );
   }

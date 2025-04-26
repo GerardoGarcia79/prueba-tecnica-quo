@@ -10,7 +10,7 @@ const UserCard = ({ user }: { user: User }) => {
       {/* Mobile img and Tablet/Desktop Img/Name */}
       <div className="col-span-2 row-start-1 md:col-span-1 md:row-auto flex items-center space-x-4">
         <img
-          src={user.picture.medium}
+          src={user.image}
           alt={user.name}
           className="w-20 h-20 md:w-12 md:h-12 rounded-full"
         />

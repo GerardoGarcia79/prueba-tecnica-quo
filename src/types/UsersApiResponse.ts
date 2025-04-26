@@ -1,33 +1,91 @@
-export interface UsersApiResponse {
-  results: Result[];
-  info: Info;
+export interface UsersAPIResponse {
+  users: UserAPIResponse[];
+  total: number;
+  skip: number;
+  limit: number;
 }
 
-export interface Info {
-  seed: string;
-  results: number;
-  page: number;
-  version: string;
-}
-
-export interface Result {
-  gender: Gender;
-  name: Name;
-  location: Location;
-  email: string;
-  login: Login;
-  dob: Dob;
-  registered: Dob;
-  phone: string;
-  cell: string;
-  id: ID;
-  picture: Picture;
-  nat: string;
-}
-
-export interface Dob {
-  date: Date;
+export interface UserAPIResponse {
+  id: number;
+  firstName: string;
+  lastName: string;
+  maidenName: string;
   age: number;
+  gender: Gender;
+  email: string;
+  phone: string;
+  username: string;
+  password: string;
+  birthDate: string;
+  image: string;
+  bloodGroup: string;
+  height: number;
+  weight: number;
+  eyeColor: string;
+  hair: Hair;
+  ip: string;
+  address: Address;
+  macAddress: string;
+  university: string;
+  bank: Bank;
+  company: Company;
+  ein: string;
+  ssn: string;
+  userAgent: string;
+  crypto: Crypto;
+  role: Role;
+}
+
+export interface Address {
+  address: string;
+  city: string;
+  state: string;
+  stateCode: string;
+  postalCode: string;
+  coordinates: Coordinates;
+  country: Country;
+}
+
+export interface Coordinates {
+  lat: number;
+  lng: number;
+}
+
+export enum Country {
+  UnitedStates = "United States",
+}
+
+export interface Bank {
+  cardExpire: string;
+  cardNumber: string;
+  cardType: string;
+  currency: string;
+  iban: string;
+}
+
+export interface Company {
+  department: string;
+  name: string;
+  title: string;
+  address: Address;
+}
+
+export interface Crypto {
+  coin: Coin;
+  wallet: Wallet;
+  network: Network;
+}
+
+export enum Coin {
+  Bitcoin = "Bitcoin",
+}
+
+export enum Network {
+  EthereumERC20 = "Ethereum (ERC20)",
+}
+
+export enum Wallet {
+  The0Xb9Fc2Fe63B2A6C003F1C324C3Bfa53259162181A = "0xb9fc2fe63b2a6c003f1c324c3bfa53259162181a",
 }
 
 export enum Gender {
@@ -35,54 +93,20 @@ export enum Gender {
   Male = "male",
 }
 
-export interface ID {
-  name: string;
-  value: null | string;
+export interface Hair {
+  color: string;
+  type: Type;
 }
 
-export interface Location {
-  street: Street;
-  city: string;
-  state: string;
-  country: string;
-  postcode: number | string;
-  coordinates: Coordinates;
-  timezone: Timezone;
+export enum Type {
+  Curly = "Curly",
+  Kinky = "Kinky",
+  Straight = "Straight",
+  Wavy = "Wavy",
 }
 
-export interface Coordinates {
-  latitude: string;
-  longitude: string;
-}
-
-export interface Street {
-  number: number;
-  name: string;
-}
-
-export interface Timezone {
-  offset: string;
-  description: string;
-}
-
-export interface Login {
-  uuid: string;
-  username: string;
-  password: string;
-  salt: string;
-  md5: string;
-  sha1: string;
-  sha256: string;
-}
-
-export interface Name {
-  title: string;
-  first: string;
-  last: string;
-}
-
-export interface Picture {
-  large: string;
-  medium: string;
-  thumbnail: string;
+export enum Role {
+  Admin = "admin",
+  Moderator = "moderator",
+  User = "user",
 }
