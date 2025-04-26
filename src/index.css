@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+:root {
+    --text-text: #112A46;
+    --bg-bg: #f7f9fc;
+    --btn-primary: #9abde3;
+    --title-header: 24px;
+  }
+
+  .table-header {
+    font-size: var(--title-header);
+  }

@@ -6,7 +6,7 @@ export interface User {
   cell: string;
   picture: {
     medium: string;
-    thumbnail: string;
+    large: string;
   };
   address: {
     street: string;

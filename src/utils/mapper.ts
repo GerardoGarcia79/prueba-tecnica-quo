@@ -15,6 +15,6 @@ export const UsersApiResultToUserMapper = (user: Result): User => ({
   },
   picture: {
     medium: user.picture.medium,
-    thumbnail: user.picture.thumbnail,
+    large: user.picture.large,
   },
 });
