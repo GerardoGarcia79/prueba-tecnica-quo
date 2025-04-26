@@ -1,15 +1,18 @@
 import UsersGrid from "./components/UsersGrid";
+import UsersProvider from "./state-management/UsersProvider";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#f7f9fc] flex justify-center">
-      <div className="my-5 md:my-10">
-        <h1 className="font-bold text-3xl text-text text-center mb-2 md:mb-5">
-          Prueba Técnica Front-end Junior
-        </h1>
-        <UsersGrid />
+    <UsersProvider>
+      <div className="min-h-screen bg-[#f7f9fc] flex justify-center">
+        <div className="my-5 md:my-10">
+          <h1 className="font-bold text-3xl text-text text-center mb-2 md:mb-5">
+            Prueba Técnica Front-end Junior
+          </h1>
+          <UsersGrid />
+        </div>
       </div>
-    </div>
+    </UsersProvider>
   );
 }
 
