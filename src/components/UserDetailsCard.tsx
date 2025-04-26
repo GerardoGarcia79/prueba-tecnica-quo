@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import UsersContext from "../state-management/context/usersContext";
 import { IoCloseCircle } from "react-icons/io5";
+import UIContext from "../state-management/context/uiContext";
 
 const UserDetailsCard = () => {
-  const { openModal, setOpenModal, selectedUser } = useContext(UsersContext);
+  const { openModal, setOpenModal, selectedUser } = useContext(UIContext);
   const user = selectedUser;
 
   if (!openModal || !selectedUser) return null;

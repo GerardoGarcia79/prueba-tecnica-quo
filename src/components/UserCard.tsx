@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { User } from "../types/User";
-import UsersContext from "../state-management/context/usersContext";
+import UIContext from "../state-management/context/uiContext";
 
 const UserCard = ({ user }: { user: User }) => {
-  const { setOpenModal, setSelectedUser } = useContext(UsersContext);
+  const { setOpenModal, setSelectedUser } = useContext(UIContext);
 
   return (
     <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-4 md:grid-rows-1 p-4 border-b-1 shadow-sm bg-white items-center text-text place-items-center md:place-items-start md:gap-y-2 md:gap-x-4 break-all text-center md:text-start mb-5 md:mb-0">

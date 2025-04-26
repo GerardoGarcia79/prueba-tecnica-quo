@@ -1,11 +1,11 @@
 import { lazy, Suspense, useContext } from "react";
-import UsersContext from "../state-management/context/usersContext";
 import { ClipLoader } from "react-spinners";
+import UIContext from "../state-management/context/uiContext";
 
 const UserDetailsCard = lazy(() => import("./UserDetailsCard"));
 
 const LazyUserDetailsCard = () => {
-  const { openModal } = useContext(UsersContext);
+  const { openModal } = useContext(UIContext);
 
   if (!openModal) return null;
 

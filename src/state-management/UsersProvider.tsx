@@ -12,8 +12,6 @@ const UsersProvider = ({ children }: Props) => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [searchValue, setSearchValue] = useState("");
-  const [openModal, setOpenModal] = useState(false);
-  const [selectedUser, setSelectedUser] = useState<User | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -36,13 +34,9 @@ const UsersProvider = ({ children }: Props) => {
       searchValue,
       error,
       isLoading,
-      openModal,
-      selectedUser,
       setSearchValue,
-      setOpenModal,
-      setSelectedUser,
     }),
-    [filteredUsers, searchValue, error, isLoading, openModal, selectedUser]
+    [filteredUsers, searchValue, error, isLoading]
   );
 
   return (
