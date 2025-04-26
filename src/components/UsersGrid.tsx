@@ -26,14 +26,11 @@ const UsersGrid = () => {
 
   return (
     <>
-      <div className="min-w-[95%] sm:min-w-[90%] md:min-w-[80%] lg:min-w-[70%] text-[var(--text-text)] mx-auto">
-        <div className="hidden md:grid grid-cols-4 font-bold gap-4 px-4 py-1 border-b-1 shadow-sm bg-white">
+      <div className="max-w-[95%] sm:max-w-[90%] lg:max-w-[80%] text-[var(--text-text)] mx-auto">
+        <div className="hidden md:grid grid-cols-3 font-bold gap-4 px-4 py-1 border-b-1 shadow-sm bg-white">
           <h2 className="table-header">Name</h2>
           <h2 className="table-header">Cell number</h2>
           <h2 className="table-header">Email</h2>
-          <div className="flex justify-center">
-            <h2 className="table-header">Details</h2>
-          </div>
         </div>
         {filteredUsers.map((user, index) => (
           <UserCard key={user.id + "-" + index} user={user} />
