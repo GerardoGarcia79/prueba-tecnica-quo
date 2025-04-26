@@ -2,7 +2,9 @@ import { useContext } from "react";
 import UsersContext from "../state-management/context/usersContext";
 
 const SearchBar = () => {
-  const { setSearchValue } = useContext(UsersContext);
+  const { setSearchValue, error, isLoading } = useContext(UsersContext);
+
+  if (error || isLoading) return null;
 
   return (
     <div className="flex justify-center">

@@ -4,6 +4,8 @@ import { User } from "../../types/User";
 interface UsersContextType {
   filteredUsers: User[];
   searchValue: string;
+  error: string;
+  isLoading: boolean;
   setSearchValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
